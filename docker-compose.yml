@@ -7,7 +7,10 @@ services:
       - "127.0.0.1:4510-4559:4510-4559"  # external services port range
     environment:
       # LocalStack configuration: https://docs.localstack.cloud/references/configuration/
-      - DEBUG=${DEBUG:-0}
+      # - DEBUG=${DEBUG:-0}
+      - DEBUG=1
+      - SERVICES=s3,dynamodb,lambda,apigateway,cognito-idp,sns,sqs,sts,iam
+      - LAMBDA_EXECUTOR=local
     volumes:
       - "${LOCALSTACK_VOLUME_DIR:-./volume}:/var/lib/localstack"
       - "/var/run/docker.sock:/var/run/docker.sock"

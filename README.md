@@ -1,4 +1,13 @@
-# Setup/Requirements
+# Technologies
+
+- LocalStack
+- Angular Frontend
+
+# Requirements
+
+### Python
+
+https://www.python.org/downloads/
 
 ### Docker
 
@@ -6,8 +15,43 @@ Download under https://www.docker.com/
 
 You can also validate the docker-compose.yml file using the [localstack cli](https://docs.localstack.cloud/aws/getting-started/installation/#docker-compose) and `localstack config validate`
 
+# Setup
 
-# Start Application
+### Install Dependencies
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Install AWS-CDK
+
+```bash
+npm install -g aws-cdk
+```
+
+### Start LocalStack
+
+```bash
+docker compose up -d
+```
+
+### Deploy to LocalStack
+
+```bash
+chmod +x scripts/deploy-local.sh
+./scripts/deploy-local.sh
+```
+
+### Deploy to AWS
+
+```bash
+chmod +x scripts/deploy-aws.sh
+./scripts/deploy-aws.sh
+```
+
+Alternatively this project is also setup to be able to us [UV](https://github.com/astral-sh/uv) an extremely fast and easy-to-use python package and project manager.
 
 ### LocalStack
 
