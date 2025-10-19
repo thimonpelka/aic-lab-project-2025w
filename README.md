@@ -1,10 +1,19 @@
-# Setup
+# Setup/Requirements
 
-### Installing LocalStack CLI:
+### Docker
 
-https://docs.localstack.cloud/aws/getting-started/installation/
+Download under https://www.docker.com/
 
-# Scope
+You can also validate the docker-compose.yml file using the [localstack cli](https://docs.localstack.cloud/aws/getting-started/installation/#docker-compose) and `localstack config validate`
+
+
+# Start Application
+
+### LocalStack
+
+```docker compose up```
+
+# Target Scope
 
 - User Registration, Log in, Log Out using Amazon Cognito
 - User consists of first name, last name, email and password
